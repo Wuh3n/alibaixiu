@@ -1,7 +1,12 @@
+// 当管理员选择logo图片时
 $('#logo').on('change', function () {
+    // 获取到管理员选择到的图片
     var file = this.files[0];
+    // 创建formData对象 实现二进制文件上传
     var formData = new FormData();
+    // 将管理员选择到的文件添加到formData对象中
     formData.append('logo', file);
+    // 向服务器端发送请求 实现文件上传
     $.ajax({
         type: "post",
         url: "/upload",
@@ -10,16 +15,19 @@ $('#logo').on('change', function () {
         contentType: false,
         success: function (response) {
             $('#hiddenLogo').val(response[0].logo);
+            // 将logo图片显示在页面中
             $('#img').attr('src', response[0].logo);
         }
     });
 })
 
+// 当网站设置表单发生提交行为时
 $('#sAdd').on('click', function () {
     $('#comment').val($('#comment_status').prop('checked'));
     $('#review').val($('#comment_reviewed').prop('checked'));
+    // 获取管理员在表单中输入的内容
     let formData = $('#sAddForm').serialize();
-
+    // 向服务器端发送请求 实现网站设置数据添加功能
     $.ajax({
         type: "post",
         url: "/settings",
