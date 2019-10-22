@@ -4,7 +4,7 @@ let key = getUrlParams('key');
 $.ajax({
     type: 'get',
     url: '/posts/search/' + key,
-    success: function (res) {
+    success: function(res) {
         let str = template('searchTpl', { data: res });
         $('.new').html(str)
     }

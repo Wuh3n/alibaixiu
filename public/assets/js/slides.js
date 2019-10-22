@@ -4,7 +4,7 @@ $("#image").on("change", function() {
     let file = this.files[0];
     // 创建forData对象实现二进制文件上传
     let forData = new FormData()
-    // 将管理员选择到的文件添加到forData对象中
+        // 将管理员选择到的文件添加到forData对象中
     forData.append("image", file);
     // 向服务器端发送请求 实现图片上传
     $.ajax({
@@ -47,8 +47,8 @@ $.ajax({
     url: '/slides',
     success: function(res) {
         // 将res赋值给arr
-        arr = res; 
-        render(arr);      
+        arr = res;
+        render(arr);
     }
 });
 
@@ -67,7 +67,7 @@ $("tbody").on("click", ".delete", function() {
             url: '/slides/' + id,
             success: function(res) {
                 // 根据res._id  对应的数组元素的索引值给我们
-                let index = arr.findIndex(item => 
+                let index = arr.findIndex(item =>
                     item._id == res._id
                 );
                 // 想实现无刷新删除 手动将数组里面的这个元素给删除 然后重新调用 render

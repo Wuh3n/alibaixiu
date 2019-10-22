@@ -17,6 +17,7 @@ $("#addCategory").on('submit', function() {
 
 // 2.0 发送ajax请求 向服务端请求所有分类列表的数据
 render();
+
 function render() {
     $.ajax({
         type: 'get',
@@ -40,7 +41,7 @@ $("#categoryBox").on('click', '.edit', function() {
         url: '/categories/' + id,
         success: function(res) {
             let str = template('modifyCategoryTpl', res);
-			$('#formBox').html(str);
+            $('#formBox').html(str);
         }
     });
 });

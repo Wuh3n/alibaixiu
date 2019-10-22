@@ -1,6 +1,6 @@
 <script src="/login/status"></script>
 <script>
-  if (!isLogin) location.href = 'login.html';
+    if (!isLogin) location.href = 'login.html';
 </script>
 <!DOCTYPE html>
 <!DOCTYPE html>
@@ -48,7 +48,7 @@
                     <button class="btn btn-default btn-sm">筛选</button>
                 </form>
                 <ul class="pagination pagination-sm pull-right" id="page">
-                    
+
                 </ul>
             </div>
             <table class="table table-striped table-bordered table-hover">
@@ -63,7 +63,7 @@
                     </tr>
                 </thead>
                 <tbody id="postsBox">
-                    
+
                 </tbody>
             </table>
         </div>
@@ -114,40 +114,38 @@
     <script type="text/html" id="postsTpl">
         <!-- 文章列表数据模板 -->
         {{ each records item }}
-            <tr>
-                <td>{{ item.title }}</td>
-                <td>{{ item.author.nickName }}</td>
-                <td>{{ item.category.title }}</td>
-                <td class="text-center">{{ $imports.formateDate(item.createAt) }}</td>
-                <td class="text-center">{{ item.state == 1 ? '已发布' : '草稿' }}</td>
-                <td class="text-center">
-                    <a href="post-add.html?id={{ item._id }}" class="btn btn-default btn-xs">编辑</a>
-                    <a href="javascript:;" class="btn btn-danger btn-xs delete" data-id="{{ item._id }}">删除</a>
-                </td>
-            </tr>
+        <tr>
+            <td>{{ item.title }}</td>
+            <td>{{ item.author.nickName }}</td>
+            <td>{{ item.category.title }}</td>
+            <td class="text-center">{{ $imports.formateDate(item.createAt) }}</td>
+            <td class="text-center">{{ item.state == 1 ? '已发布' : '草稿' }}</td>
+            <td class="text-center">
+                <a href="post-add.html?id={{ item._id }}" class="btn btn-default btn-xs">编辑</a>
+                <a href="javascript:;" class="btn btn-danger btn-xs delete" data-id="{{ item._id }}">删除</a>
+            </td>
+        </tr>
         {{ /each }}
     </script>
 
-        </script>
-            <!-- 分页模板 -->
-            <script type="text/html" id="pageTpl">
-                {{ if page > 1 }}
-                    <li><a href="javascript:;" onclick="changePage({{ page-1 }})">上一页</a></li>
-                {{/if}}
-                {{ each display item }}
-                    <li class="{{ item == page ? 'active' : '' }}"><a href="javascript:;" onclick="changePage({{ item }})">{{ item }}</a></li>
-                {{ /each }}
-                {{ if page < pages }}
-                    <li><a href="javascript:;" onclick="changePage({{ page+1 }})">下一页</a></li>
-                {{ /if }}
-            </script>
+    </script>
+    <!-- 分页模板 -->
+    <script type="text/html" id="pageTpl">
+        {{ if page > 1 }}
+        <li><a href="javascript:;" onclick="changePage({{ page-1 }})">上一页</a></li>
+        {{/if}} {{ each display item }}
+        <li class="{{ item == page ? 'active' : '' }}"><a href="javascript:;" onclick="changePage({{ item }})">{{ item }}</a></li>
+        {{ /each }} {{ if page
+        < pages }} <li><a href="javascript:;" onclick="changePage({{ page+1 }})">下一页</a></li>
+            {{ /if }}
+    </script>
 
-            <!-- 分类列表下拉框模板 -->
-            <script type="text/html" id="categoryTpl">
-                {{ each $data item }}
-                    <option value="{{ item._id }}">{{ item.title }}</option>
-                {{ /each }}
-            </script>
+    <!-- 分类列表下拉框模板 -->
+    <script type="text/html" id="categoryTpl">
+        {{ each $data item }}
+        <option value="{{ item._id }}">{{ item.title }}</option>
+        {{ /each }}
+    </script>
 
     <script src="../assets/js/posts.js"></script>
     <script src="../assets/js/common.js"></script>

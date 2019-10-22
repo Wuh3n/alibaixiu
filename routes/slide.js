@@ -6,7 +6,7 @@ slide.post('/', require('./actions/slide/create'));
 // 根据id删除轮播图片
 slide.delete('/:id', require('./actions/slide/findByIdAndDelete'));
 // 获取轮播图
-slide.get('/', require('./actions/slide/find'))
+slide.get('/', require('./actions/slide/find'));
 
 // 导出路由
 module.exports = slide;

@@ -131,9 +131,9 @@ selectAll.on('change', function() {
 // 7.1 反选
 $("#userBox").on("change", '.userStatus', function() {
     // 获取到所有用户 在所有用户中过滤出选中的用户
-	// 判断选中用户的数量和所有用户的数量是否一致
-	// 如果一致 就说明所有的用户都是选中的
-	// 否则 就是有用户没有被选中
+    // 判断选中用户的数量和所有用户的数量是否一致
+    // 如果一致 就说明所有的用户都是选中的
+    // 否则 就是有用户没有被选中
     let ipts = $("#userBox").find('input');
     if (ipts.length == ipts.filter(":checked").length) {
         selectAll.prop("checked", true);

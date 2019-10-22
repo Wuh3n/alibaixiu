@@ -29,30 +29,30 @@ function changePage(page) {
 
 // 3.0 向服务器端发送请求 索要分类数据
 $.ajax({
-	type: 'get',
-	url: '/categories',
-	success: function (res) {
-		let str = template('categoryTpl', res);
-		$('#categoryBox').html(str);
-	}
+    type: 'get',
+    url: '/categories',
+    success: function(res) {
+        let str = template('categoryTpl', res);
+        $('#categoryBox').html(str);
+    }
 })
 
 // 4.0 当用户进行文章列表筛选的时候
 $("#filterForm").on('submit', function() {
     // 获取到管理员选择的过滤条件
-	let formData = $(this).serialize();
-	// 向服务器端发送请求 根据条件索要文章列表数据
-	$.ajax({
-		type: 'get',
-		url: '/posts',
-		data: formData,
-		success: function (res) {
-			let str = template("postsTpl", res);
+    let formData = $(this).serialize();
+    // 向服务器端发送请求 根据条件索要文章列表数据
+    $.ajax({
+        type: 'get',
+        url: '/posts',
+        data: formData,
+        success: function(res) {
+            let str = template("postsTpl", res);
             $("#postsBox").html(str);
             let strPage = template("pageTpl", res);
             $("#page").html(strPage);
-		}
-	});
+        }
+    });
     // 阻止表单默认提交行为
     return false;
 });

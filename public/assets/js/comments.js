@@ -3,12 +3,12 @@ $.ajax({
     type: 'get',
     url: '/comments',
     success: function(res) {
-        let str =  template("commentsTpl", res);
+        let str = template("commentsTpl", res);
         $("#commentsBox").html(str);
         let strPage = template("pageTpl", res);
-        $("#pageBox").html(strPage);        
+        $("#pageBox").html(strPage);
     }
-});   
+});
 // 2.0 实现分页
 function changePage(page) {
     $.ajax({
@@ -18,10 +18,10 @@ function changePage(page) {
             page
         },
         success: function(res) {
-            let str =  template("commentsTpl", res);
+            let str = template("commentsTpl", res);
             $("#commentsBox").html(str);
             let strPage = template("pageTpl", res);
-            $("#pageBox").html(strPage);              
+            $("#pageBox").html(strPage);
         }
     });
 };
@@ -40,14 +40,14 @@ $("#commentsBox").on('click', '.status', function() {
             state: status == 0 ? 1 : 0
         },
         success: function(res) {
-            location.reload();           
+            location.reload();
         }
     });
 });
 
 // 4.0 当删除按钮被点击时
 $("#commentsBox").on("click", ".delete", function() {
-    if ( confirm("您确定要删除该评论吗？")) {
+    if (confirm("您确定要删除该评论吗？")) {
         // 获取管理员要删除的评论的id
         let id = $(this).attr("data-id");
         // 向服务器端发送请求 执行删除操作
@@ -55,7 +55,7 @@ $("#commentsBox").on("click", ".delete", function() {
             type: 'delete',
             url: '/comments/' + id,
             success: function(res) {
-                location.reload();               
+                location.reload();
             }
         });
     };
