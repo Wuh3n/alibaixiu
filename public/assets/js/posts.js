@@ -39,7 +39,7 @@ $.ajax({
 	type: 'get',
 	url: '/categories',
 	success: function (res) {
-		var str = template('categoryTpl', res);
+		let str = template('categoryTpl', res);
 		$('#categoryBox').html(str);
 	}
 })

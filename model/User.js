@@ -73,7 +73,7 @@ const validateUser = user => {
 		// 允许对象包含被忽略的未知键
 		allowUnknown: true
 	});
-}
+};
 
 // 登录数据格式校验
 const validateLogin = user => {
@@ -87,7 +87,7 @@ const validateLogin = user => {
 		// 检测到错误立即返回
 		abortEarly: true
 	});
-}
+};
 
 User.findOne({'email': 'itheima@itcast.cn'}).then(async result => {
 	if (result == null) {
@@ -105,8 +105,8 @@ User.findOne({'email': 'itheima@itcast.cn'}).then(async result => {
 			createTime: new Date,
 			status: 1
 		});
-	}
-})
+	};
+});
 
 // 导出对象
 module.exports = {

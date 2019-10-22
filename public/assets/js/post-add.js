@@ -34,7 +34,7 @@ $("#feature").on('change', function() {
 // 3.0 当添加文章表单提交的时候
 $('#addForm').on('submit', function () {
 	// 获取管理员在表单中输入的内容
-	var formData = $(this).serialize();
+	let formData = $(this).serialize();
 	// 向服务器端发送请求 实现添加文章功能
 	$.ajax({
 		type: 'post',
@@ -94,15 +94,14 @@ if (id != -1) {
             $('#status > option').each((index, item) => {
                 // 判断option里面的value属性的值与res.category的值是否相等 如果相等 就表示是这个分类 给其设置一个selected 
                 if ($(item).attr('value') == res.state) {
-                  $(item).prop('selected', true);
+                    $(item).prop('selected', true);
                 }
-              });
-              
-              $('#created').val(res.createAt &&　res.createAt.substr(0,16));
-              
-              // 将保存按钮隐藏 将编辑按钮显示出来 
-              $('#pAdd').hide();
-              $('#pEdit').show();
+                });
+                $('#created').val(res.createAt &&　res.createAt.substr(0,16));
+
+                // 将保存按钮隐藏 将编辑按钮显示出来 
+                $('#pAdd').hide();
+                $('#pEdit').show();
         }
     });
 };

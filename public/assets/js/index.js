@@ -14,7 +14,7 @@ $.ajax({
 	success: function (res) {
 		$('#category').html('<strong>'+res.categoryCount+'</strong>个分类')
 	}
-})
+});
 
 // 获取评论数量
 $.ajax({

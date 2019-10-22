@@ -66,7 +66,7 @@ const Post = mongoose.model('Post', PostSchema);
 
 // 时间更新
 PostSchema.pre('findOneAndUpdate', function(next) {
-	this.findOneAndUpdate({}, { updateAt: Date.now() })
+	this.findOneAndUpdate({}, { updateAt: Date.now() });
 	next();
 });
 
@@ -87,7 +87,7 @@ const validatePost = post => {
 		// 允许对象包含被忽略的未知键
 		allowUnknown: true
 	});
-}
+};
 
 // 导出模块成员
 module.exports = {

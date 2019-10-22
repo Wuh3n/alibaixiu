@@ -35,11 +35,11 @@
                 <form class="form-inline" id="filterForm">
                     <select name="category" class="form-control input-sm" id="categoryBox">
             
-          </select>
+        </select>
                     <select name="state" class="form-control input-sm">
             <option value="0">草稿</option>
             <option value="1">已发布</option>
-          </select>
+        </select>
                     <button class="btn btn-default btn-sm">筛选</button>
                 </form>
                 <ul class="pagination pagination-sm pull-right" id="page">
@@ -59,7 +59,6 @@
                 </thead>
                 <tbody id="postsBox">
                     
-                   
                 </tbody>
             </table>
         </div>
@@ -68,7 +67,7 @@
     <div class="aside">
         <div class="profile">
             <img class="avatar" src="../uploads/3.jpg">
-            <h3 class="name">Coder</h3>
+            <h3 class="name">陈金朋</h3>
         </div>
         <ul class="nav">
             <li>
@@ -129,13 +128,13 @@
             <script type="text/html" id="pageTpl">
                 {{ if page > 1 }}
                     <li><a href="javascript:;" onclick="changePage({{ page-1 }})">上一页</a></li>
-                 {{/if}}
-                 {{ each display item }}
-                     <li class="{{ item == page ? 'active' : '' }}"><a href="javascript:;" onclick="changePage({{ item }})">{{ item }}</a></li>
-                 {{ /each }}
-                 {{ if page < pages }}
-                     <li><a href="javascript:;" onclick="changePage({{ page+1 }})">下一页</a></li>
-                 {{ /if }}
+                {{/if}}
+                {{ each display item }}
+                    <li class="{{ item == page ? 'active' : '' }}"><a href="javascript:;" onclick="changePage({{ item }})">{{ item }}</a></li>
+                {{ /each }}
+                {{ if page < pages }}
+                    <li><a href="javascript:;" onclick="changePage({{ page+1 }})">下一页</a></li>
+                {{ /if }}
             </script>
 
             <!-- 分类列表下拉框模板 -->

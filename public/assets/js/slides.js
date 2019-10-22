@@ -56,7 +56,6 @@ $.ajax({
 function render(data) {
     let str = template("sTpl", { res: data });
     $("tbody").html(str);
-   
 };
 
 // 给每一个删除按钮注册点击事件 需要使用事件委托

@@ -14,4 +14,4 @@ $("#modifyForm").on('submit', function() {
 
     // 阻止表单默认提交行为
     return false;
-})
+});

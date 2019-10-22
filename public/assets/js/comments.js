@@ -24,7 +24,7 @@ function changePage(page) {
             $("#pageBox").html(strPage);              
         }
     });
-}
+};
 
 // 3.0 当审核按钮被点击的时候
 $("#commentsBox").on('click', '.status', function() {

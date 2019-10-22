@@ -110,7 +110,7 @@
         <div class="profile">
             <!-- <img class="avatar" src="../uploads/avatar.jpg"> -->
             <img class="avatar" src="../uploads/3.jpg">
-            <h3 class="name">Coder</h3>
+            <h3 class="name">陈金朋</h3>
         </div>
         <ul class="nav">
             <li>
@@ -178,14 +178,14 @@
                 <label>头像</label>
                 <div class="form-group">
                     <label class="form-image">
-            <input id="avatar" type="file">
-            {{ if avatar }}
-            <img src="{{ avatar }}" id="preview">
-            {{ else }}
-            <img src="../assets/img/default.png" id="preview">
-            {{ /if }}
-            <i class="mask fa fa-upload"></i>
-          </label>
+                        <input id="avatar" type="file">
+                        {{ if avatar }}
+                        <img src="{{ avatar }}" id="preview">
+                        {{ else }}
+                        <img src="../assets/img/default.png" id="preview">
+                        {{ /if }}
+                        <i class="mask fa fa-upload"></i>
+                    </label>
                     <input type="hidden" name="avatar" id="hiddenAvatar" value="{{ avatar }}">
                 </div>
             </div>

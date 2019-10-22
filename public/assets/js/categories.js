@@ -43,7 +43,7 @@ $("#categoryBox").on('click', '.edit', function() {
 			$('#formBox').html(str);
         }
     });
-})
+});
 
 // 4.0 当修改分类数据表单发生提交行为的时候
 $("#formBox").on('submit', '#modifyCategory', function() {
@@ -62,12 +62,12 @@ $("#formBox").on('submit', '#modifyCategory', function() {
     });
 
     // 阻止表单的默认提交行为
-    return false
+    return false;
 });
 
 // 5.0 使用事件委托给删除按钮绑定点击事件
 $("#categoryBox").on('click', '.delete', function() {
-    if (confirm("您确定要删除该文章吗？")) {
+    if (confirm("您确定要删除该分类吗？")) {
         // 获取要删除分类数据的id
         let id = $(this).attr("data-id");
         // 向服务器发送请求 删除数据

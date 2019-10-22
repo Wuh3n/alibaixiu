@@ -42,7 +42,7 @@ const validateSlide = slide => {
 		// 允许对象包含被忽略的未知键
 		allowUnknown: true
 	});
-}
+};
 
 // 导出对象
 module.exports = {

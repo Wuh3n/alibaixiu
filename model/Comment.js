@@ -39,23 +39,6 @@ const CommentSchema = new Schema({
 // 创建分类集合
 const Comment = mongoose.model('Comment', CommentSchema);
 
-// for (var i = 1; i < 22; i++) {
-// 	const comment = new Comment({
-// 		// 评论人
-// 		author: '5da91e543eb1fa2248847c11',
-// 		// 评论内容
-// 		content: '所爱隔山海，山海不可平' + i,
-// 		// 评论文章
-// 		post: '5daaf4f2d452934dcc55d3ec',
-// 		// 状态
-// 		state: 0,
-// 		// 评论时间
-// 		createAt: null,
-// 	})
-// 	comment.save();
-// };
-
-
 // 文章分类格式校验（路由级别）
 const validateComment = comment => {
 	// _id验证规则
@@ -74,10 +57,10 @@ const validateComment = comment => {
 		// 允许对象包含被忽略的未知键
 		allowUnknown: true
 	});
-}
+};
 
 // 导出模块成员
 module.exports = {
 	Comment,
 	validateComment
-}
+};
