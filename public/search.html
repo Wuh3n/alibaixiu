@@ -180,7 +180,7 @@
       <div class="panel new">
         <!--<h3>会生活</h3>
         <div id="listBox"></div>
-         <div class="entry">
+        <div class="entry">
           <div class="head">
             <a href="detail.html">星球大战：原力觉醒视频演示 电影票68</a>
           </div>
@@ -266,13 +266,13 @@
     {{each data}}
     <div class="entry">
       <div class="head">
-       
+      
         <a href="detail.html?id={{$value._id}}">{{$value.title}}</a>
       </div>
       <div class="main">
         <p class="info">{{$value.author.nickName}} 发表于 {{$value.createAt && $value.createAt.substr(0,10)}}</p>
         <p class="brief">
-         {{$value.content}}
+        {{$value.content}}
         </p>
         <p class="extra">
           <span class="reading">阅读({{$value.meta.views}})</span>
