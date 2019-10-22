@@ -20,3 +20,13 @@ function formateDate(date) {
   return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 };
 
+// 展示用户的相关信息
+$.ajax({
+    type: 'get',
+    url: '/users/' + userId,
+    success: function(res) {
+        $(".avatar").attr("src", res.avatar);
+        $(".profile .name").text(res.nackName);
+    }
+});
+
