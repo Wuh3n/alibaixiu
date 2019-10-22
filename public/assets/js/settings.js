@@ -1,5 +1,5 @@
 // 当管理员选择logo图片时
-$('#logo').on('change', function () {
+$('#logo').on('change', function() {
     // 获取到管理员选择到的图片
     var file = this.files[0];
     // 创建formData对象 实现二进制文件上传
@@ -13,7 +13,7 @@ $('#logo').on('change', function () {
         data: formData,
         processData: false,
         contentType: false,
-        success: function (response) {
+        success: function(response) {
             $('#hiddenLogo').val(response[0].logo);
             // 将logo图片显示在页面中
             $('#img').attr('src', response[0].logo);
@@ -22,7 +22,7 @@ $('#logo').on('change', function () {
 })
 
 // 当网站设置表单发生提交行为时
-$('#sAdd').on('click', function () {
+$('#sAdd').on('click', function() {
     $('#comment').val($('#comment_status').prop('checked'));
     $('#review').val($('#comment_reviewed').prop('checked'));
     // 获取管理员在表单中输入的内容
@@ -32,7 +32,7 @@ $('#sAdd').on('click', function () {
         type: "post",
         url: "/settings",
         data: formData,
-        success: function (response) {
+        success: function(response) {
             location.reload();
         }
     });
@@ -41,17 +41,17 @@ $('#sAdd').on('click', function () {
 $.ajax({
     type: "get",
     url: "/settings",
-    success: function (response) {
+    success: function(response) {
         if (response) {
             // 将logo地址存储在隐藏域中
             $('#hiddenLogo').val(response.logo)
-            // 将logo显示在页面中 
+                // 将logo显示在页面中 
             $('#img').attr('src', response.logo)
-            // 将网站标题显示在页面中
+                // 将网站标题显示在页面中
             $('input[name="title"]').val(response.title);
             // 将是否开启评论功能显示在页面中
             $('input[name="comment"]').prop('checked', response.comment)
-            // 将评论是否经过人工审核显示在页面中
+                // 将评论是否经过人工审核显示在页面中
             $('input[name="review"]').prop('checked', response.review)
             $('textarea[name="description"]').html(response.description);
             $('input[name="keywords"]').val(response.keywords);
