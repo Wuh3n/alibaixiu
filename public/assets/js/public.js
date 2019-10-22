@@ -18,7 +18,7 @@ function getUrlParams(name) {
 	return -1;
 };
 
-  // 向服务器端发送请求 索要随机推荐数据
+// 向服务器端发送请求 索要随机推荐数据
 $.ajax({
 	type: 'get',
 	url: '/posts/random',
@@ -68,7 +68,7 @@ $.ajax({
 	}
 });
 
-  // 向服务器端发送请求 索要文章分类列表数据
+// 向服务器端发送请求 索要文章分类列表数据
 $.ajax({
 	type: 'get',
 	url: '/categories',
